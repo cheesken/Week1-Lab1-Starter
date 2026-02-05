@@ -14,6 +14,6 @@ Build **two services** that communicate over the network:
 ```(venv) monster@Ananyas-MacBook-Pro cmpe273-week1-lab1-starter % curl "http://127.0.0.1:8081/call-echo?msg=hello"```
 ```{"error":"HTTPConnectionPool(host='127.0.0.1', port=8080): Max retries exceeded with url: /echo?msg=hello (Caused by NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=8080): Failed to establish a new connection: [Errno 61] Connection refused\"))","service_a":"unavailable","service_b":"ok"}```
 
-# What makes this distributed?
+## What makes this distributed?
 
 This system is distributed because it has of two independent services running as separate processes that communicate over the network using HTTP. Service B depends on Service A but must handle timeouts, network failures, and unavailable services. The services have independent lifecycles and demonstrate failure handling, logging, and inter-service communication.
